@@ -1,45 +1,58 @@
 package pageObjectModel;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import stellarburgers.URL;
 
 import java.time.Duration;
 
 public class RegistrationPage {
-    private WebDriver driver;
-    private By nameField = By.xpath("//form/fieldset[1]//input");
-    private By emailField = By.xpath("//form/fieldset[2]//input");
-    private By passwordField = By.xpath("//form/fieldset[3]//input");
-    private By registerButton = By.xpath("//form//button");
-    private By passwordFieldError = By.xpath("//form/fieldset[3]//p");
+    private final WebDriver driver;
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void fillName(String name) {
+    private final By nameField = By.xpath("//form/fieldset[1]//input");
+    private final By emailField = By.xpath("//form/fieldset[2]//input");
+    private final By passwordField = By.xpath("//form/fieldset[3]//input");
+    private final By registerButton = By.xpath("//form//button");
+    private final By passwordFieldError = By.xpath("//form/fieldset[3]//p");
+    private final By loginLink = By.xpath("//p/a");
+    @Step("Fill name field")
+    private void fillName(String name) {
         driver.findElement(nameField).sendKeys(name);
     }
-    public void fillEmail(String email) {
+    @Step("Fill email field")
+    private void fillEmail(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
-    public void fillPassword(String password) {
+    @Step("Fill password field")
+    private void fillPassword(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
-    public void clickRegisterButton() {
+    @Step("Click register button")
+    private void clickRegisterButton() {
         driver.findElement(registerButton).click();
     }
+    @Step("Register with credentials provided")
     public void register(String name, String email, String password) {
         fillName(name);
         fillEmail(email);
         fillPassword(password);
         clickRegisterButton();
     }
+    @Step("Wait for URL update")
     public void waitUrlUpdate(){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.urlContains("login"));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.RegistrationPage)));
     }
-
+    @Step("Get password field error")
     public String getPasswordFieldError() {
         return driver.findElement(passwordFieldError).getText();
+    }
+    @Step("Click login link")
+    public void clickLoginLink() {
+        driver.findElement(loginLink).click();
     }
 }
