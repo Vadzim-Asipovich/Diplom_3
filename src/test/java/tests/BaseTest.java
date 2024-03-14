@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -29,7 +28,7 @@ public class BaseTest {
         selectBrowser();
     }
 
-    public void selectBrowser() {
+    private void selectBrowser() {
         switch (browser) {
             case "chrome":
                 setUpChrome();
@@ -40,17 +39,17 @@ public class BaseTest {
         }
     }
 
-    public void setUpChrome() {
+    private void setUpChrome() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
     }
 
-    public void setUpYandex() {
+    private void setUpYandex() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
     }
 }

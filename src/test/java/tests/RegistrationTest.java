@@ -2,9 +2,8 @@ package tests;
 
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.jupiter.api.DisplayName;
 import pageObjectModel.RegistrationPage;
 import stellarburgers.*;
 import utility.SampleUserData;
@@ -19,6 +18,7 @@ public class RegistrationTest extends BaseTest{
         driver.quit();
     }
     @Test
+    @DisplayName("Registration successful")
     public void registrationSuccessful() {
         driver.get(URL.RegistrationPage);
         RegistrationPage objRegistrationPage = new RegistrationPage(driver);
@@ -28,6 +28,7 @@ public class RegistrationTest extends BaseTest{
         Assert.assertTrue(Steps.isSampleUserRegistered());
     }
     @Test
+    @DisplayName("Registration failed: incorrect email")
     public void registrationFailedIncorrectPasswordLength() {
         driver.get(URL.RegistrationPage);
         RegistrationPage objRegistrationPage = new RegistrationPage(driver);

@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.jupiter.api.DisplayName;
 import pageObjectModel.HomePage;
 import pageObjectModel.ProfilePage;
 import stellarburgers.*;
@@ -28,12 +28,14 @@ public class EnterConstructorFromProfileTest extends BaseTest{
         driver.quit();
     }
     @Test
+    @DisplayName("Enter constructor from profile via logo")
     public void enterConstructorFromProfileViaLogo() {
         objProfilePage.clickLogoLink();
         objProfilePage.waitUrlUpdate();
         Assert.assertEquals(URL.HomePage + "/", driver.getCurrentUrl());
     }
     @Test
+    @DisplayName("Enter constructor from profile via constructor link")
     public void enterConstructorFromProfileViaConstructorLink() {
         objProfilePage.clickConstructorLink();
         objProfilePage.waitUrlUpdate();

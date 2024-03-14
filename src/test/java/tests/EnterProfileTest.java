@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.jupiter.api.DisplayName;
 import pageObjectModel.HomePage;
 import stellarburgers.*;
 import utility.Steps;
@@ -24,6 +24,7 @@ public class EnterProfileTest extends BaseTest{
         driver.quit();
     }
     @Test
+    @DisplayName("Enter profile")
     public void enterProfile() {
         objHomePage.clickProfileLink();
         objHomePage.waitUrlUpdate();

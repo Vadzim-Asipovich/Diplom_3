@@ -11,11 +11,9 @@ import java.time.Duration;
 
 public class HomePage {
     private WebDriver driver;
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
-
     private final By loginButton = By.xpath("//section[2]//button");
     private final By profileLink = By.xpath("//nav/a/p");
     private final By constructorBunsTab = By.xpath("//div[span[contains(text(), \"Булки\")]]");

@@ -3,10 +3,9 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.jupiter.api.DisplayName;
 import pageObjectModel.HomePage;
 import stellarburgers.*;
-import utility.Steps;
 
 public class ConstructorTest extends BaseTest{
     HomePage objHomePage;
@@ -20,16 +19,19 @@ public class ConstructorTest extends BaseTest{
         driver.quit();
     }
     @Test
+    @DisplayName("Transition from default to buns tab")
     public void transitionFromDefaultToSauceTab() {
         objHomePage.clickConstructorSauceTab();
         Assert.assertTrue(objHomePage.isSauceTabActive());
     }
     @Test
+    @DisplayName("Transition from default to fillings tab")
     public void transitionFromDefaultToFillingsTab() {
         objHomePage.clickConstructorFillingsTab();
         Assert.assertTrue(objHomePage.isFillingsTabActive());
     }
     @Test
+    @DisplayName("Transition from default to buns tab")
     public void transitionFromSauceToBunsTab() {
         objHomePage.clickConstructorSauceTab();
         Assert.assertTrue(objHomePage.isSauceTabActive());

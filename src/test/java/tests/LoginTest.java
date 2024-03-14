@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.jupiter.api.DisplayName;
 import pageObjectModel.ForgotPasswordPage;
 import pageObjectModel.HomePage;
 import pageObjectModel.LoginPage;
@@ -24,6 +24,7 @@ public class LoginTest extends BaseTest{
         driver.quit();
     }
     @Test
+    @DisplayName("Login with correct credentials")
     public void loginSuccessfulHomePageLoginButton() {
         driver.get(URL.HomePage);
         HomePage objHomePage = new HomePage(driver);
@@ -35,6 +36,7 @@ public class LoginTest extends BaseTest{
         Assert.assertTrue(Steps.isSampleUserLoggedIn(driver, URL.HomePage));
     }
     @Test
+    @DisplayName("Login with correct credentials")
     public void loginSuccessfulHomePagePersonalCabinet() {
         driver.get(URL.HomePage);
         HomePage objHomePage = new HomePage(driver);
@@ -46,6 +48,7 @@ public class LoginTest extends BaseTest{
         Assert.assertTrue(Steps.isSampleUserLoggedIn(driver, URL.HomePage));
     }
     @Test
+    @DisplayName("Login with correct credentials")
     public void loginSuccessfulRegistrationPage() {
         driver.get(URL.RegistrationPage);
         RegistrationPage objRegistrationPage = new RegistrationPage(driver);
@@ -57,6 +60,7 @@ public class LoginTest extends BaseTest{
         Assert.assertTrue(Steps.isSampleUserLoggedIn(driver, URL.HomePage));
     }
     @Test
+    @DisplayName("Login with correct credentials")
     public void loginSuccessfulForgotPasswordPage() {
         driver.get(URL.ForgotPasswordPage);
         ForgotPasswordPage objForgotPasswordPage = new ForgotPasswordPage(driver);
