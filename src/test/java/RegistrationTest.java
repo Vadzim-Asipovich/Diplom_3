@@ -1,9 +1,7 @@
-package tests;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
+import io.qameta.allure.junit4.DisplayName;
 import pageObjectModel.RegistrationPage;
 import stellarburgers.*;
 import utility.SampleUserData;

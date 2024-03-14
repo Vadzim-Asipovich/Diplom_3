@@ -1,5 +1,3 @@
-package tests;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class BaseTest {
-    protected WebDriver driver;
+    public WebDriver driver;
     public static final String PROPERTIES = "src/main/resources/config.properties";
     private static String browser;
 
@@ -28,7 +26,7 @@ public class BaseTest {
         selectBrowser();
     }
 
-    private void selectBrowser() {
+    public void selectBrowser() {
         switch (browser) {
             case "chrome":
                 setUpChrome();
@@ -39,14 +37,14 @@ public class BaseTest {
         }
     }
 
-    private void setUpChrome() {
+    public void setUpChrome() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
     }
 
-    private void setUpYandex() {
+    public void setUpYandex() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "--disable-dev-shm-usage");

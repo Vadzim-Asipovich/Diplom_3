@@ -1,10 +1,9 @@
-package tests;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pageObjectModel.HomePage;
+import io.qameta.allure.junit4.DisplayName;
 import pageObjectModel.ProfilePage;
 import stellarburgers.URL;
 import utility.Steps;
@@ -27,6 +26,7 @@ public class SignOutTest extends BaseTest{
         driver.quit();
     }
     @Test
+    @DisplayName("Sign out")
     public void signOutTest() {
         objProfilePage.clickExitButton();
         Assert.assertEquals(URL.LoginPage, driver.getCurrentUrl());
