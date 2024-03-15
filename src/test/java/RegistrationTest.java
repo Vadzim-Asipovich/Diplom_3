@@ -17,7 +17,7 @@ public class RegistrationTest extends BaseTest{
     }
     @Test
     @DisplayName("Registration successful")
-    public void registrationSuccessful() {
+    public void registrationSuccessfulTest() {
         driver.get(URL.RegistrationPage);
         RegistrationPage objRegistrationPage = new RegistrationPage(driver);
         objRegistrationPage.register(SampleUserData.name, SampleUserData.email, SampleUserData.password);
@@ -27,7 +27,7 @@ public class RegistrationTest extends BaseTest{
     }
     @Test
     @DisplayName("Registration failed: incorrect email")
-    public void registrationFailedIncorrectPasswordLength() {
+    public void registrationFailedIncorrectPasswordLengthTest() {
         driver.get(URL.RegistrationPage);
         RegistrationPage objRegistrationPage = new RegistrationPage(driver);
         objRegistrationPage.register(SampleUserData.name, SampleUserData.email, SampleUserData.shortPassword);

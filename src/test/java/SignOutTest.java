@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,6 +28,7 @@ public class SignOutTest extends BaseTest{
     }
     @Test
     @DisplayName("Sign out")
+    @Description("Sign out from profile page")
     public void signOutTest() {
         objProfilePage.clickExitButton();
         Assert.assertEquals(URL.LoginPage, driver.getCurrentUrl());

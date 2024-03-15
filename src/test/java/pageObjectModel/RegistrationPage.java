@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stellarburgers.URL;
-import java.time.Duration;
 
 public class RegistrationPage {
     private final WebDriver driver;
@@ -44,7 +43,7 @@ public class RegistrationPage {
     }
     @Step("Wait for URL update")
     public void waitUrlUpdate(){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.RegistrationPage)));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.RegistrationPage)));
     }
     @Step("Get password field error")
     public String getPasswordFieldError() {

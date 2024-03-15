@@ -1,5 +1,4 @@
 package utility;
-
 public class SampleUserData {
     public static final String email = "testEmailvasipovich@gmail.com";
     public static final String password = "testPassword";

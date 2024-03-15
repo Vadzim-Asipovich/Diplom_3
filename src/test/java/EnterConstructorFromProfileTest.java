@@ -27,14 +27,14 @@ public class EnterConstructorFromProfileTest extends BaseTest{
     }
     @Test
     @DisplayName("Enter constructor from profile via logo")
-    public void enterConstructorFromProfileViaLogo() {
+    public void enterConstructorFromProfileViaLogoTest() {
         objProfilePage.clickLogoLink();
         objProfilePage.waitUrlUpdate();
         Assert.assertEquals(URL.HomePage + "/", driver.getCurrentUrl());
     }
     @Test
     @DisplayName("Enter constructor from profile via constructor link")
-    public void enterConstructorFromProfileViaConstructorLink() {
+    public void enterConstructorFromProfileViaConstructorLinkTest() {
         objProfilePage.clickConstructorLink();
         objProfilePage.waitUrlUpdate();
         Assert.assertEquals(URL.HomePage + "/", driver.getCurrentUrl());

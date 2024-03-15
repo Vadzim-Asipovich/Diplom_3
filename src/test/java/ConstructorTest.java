@@ -19,19 +19,19 @@ public class ConstructorTest extends BaseTest{
     }
     @Test
     @DisplayName("Transition from default to buns tab")
-    public void transitionFromDefaultToSauceTab() {
+    public void transitionFromDefaultToSauceTabTest() {
         objHomePage.clickConstructorSauceTab();
         Assert.assertTrue(objHomePage.isSauceTabActive());
     }
     @Test
     @DisplayName("Transition from default to fillings tab")
-    public void transitionFromDefaultToFillingsTab() {
+    public void transitionFromDefaultToFillingsTabTest() {
         objHomePage.clickConstructorFillingsTab();
         Assert.assertTrue(objHomePage.isFillingsTabActive());
     }
     @Test
     @DisplayName("Transition from default to buns tab")
-    public void transitionFromSauceToBunsTab() {
+    public void transitionFromSauceToBunsTabTest() {
         objHomePage.clickConstructorSauceTab();
         Assert.assertTrue(objHomePage.isSauceTabActive());
         objHomePage.clickConstructorBunsTab();

@@ -23,7 +23,7 @@ public class EnterProfileTest extends BaseTest{
     }
     @Test
     @DisplayName("Enter profile")
-    public void enterProfile() {
+    public void enterProfileTest() {
         objHomePage.clickProfileLink();
         objHomePage.waitUrlUpdate();
         //TODO: поменять проверку

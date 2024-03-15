@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stellarburgers.URL;
 
-import java.time.Duration;
-
 public class HomePage {
     private WebDriver driver;
     public HomePage(WebDriver driver) {
@@ -36,7 +34,7 @@ public class HomePage {
 
     @Step("Wait for URL update")
     public void waitUrlUpdate() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.HomePage)));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.HomePage)));
     }
     @Step("Click constructor sauce tab")
     public void clickConstructorSauceTab() {

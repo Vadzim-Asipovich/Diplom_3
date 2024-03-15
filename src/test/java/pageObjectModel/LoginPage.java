@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stellarburgers.URL;
-import java.time.Duration;
 
 public class LoginPage {
     private WebDriver driver;
@@ -36,6 +35,6 @@ public class LoginPage {
     }
     @Step("Wait for URL update")
     public void waitUrlUpdate() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.LoginPage)));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.LoginPage)));
     }
 }

@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest{
     }
     @Test
     @DisplayName("Login with correct credentials")
-    public void loginSuccessfulHomePageLoginButton() {
+    public void loginSuccessfulHomePageLoginButtonTest() {
         driver.get(URL.HomePage);
         HomePage objHomePage = new HomePage(driver);
         objHomePage.clickLoginButton();
@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest{
     }
     @Test
     @DisplayName("Login with correct credentials")
-    public void loginSuccessfulHomePagePersonalCabinet() {
+    public void loginSuccessfulHomePagePersonalCabinetTest() {
         driver.get(URL.HomePage);
         HomePage objHomePage = new HomePage(driver);
         objHomePage.clickProfileLink();
@@ -47,7 +47,7 @@ public class LoginTest extends BaseTest{
     }
     @Test
     @DisplayName("Login with correct credentials")
-    public void loginSuccessfulRegistrationPage() {
+    public void loginSuccessfulRegistrationPageTest() {
         driver.get(URL.RegistrationPage);
         RegistrationPage objRegistrationPage = new RegistrationPage(driver);
         objRegistrationPage.clickLoginLink();
@@ -59,7 +59,7 @@ public class LoginTest extends BaseTest{
     }
     @Test
     @DisplayName("Login with correct credentials")
-    public void loginSuccessfulForgotPasswordPage() {
+    public void loginSuccessfulForgotPasswordPageTest() {
         driver.get(URL.ForgotPasswordPage);
         ForgotPasswordPage objForgotPasswordPage = new ForgotPasswordPage(driver);
         objForgotPasswordPage.clickLoginLink();
