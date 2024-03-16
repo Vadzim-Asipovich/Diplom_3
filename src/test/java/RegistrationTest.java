@@ -26,7 +26,7 @@ public class RegistrationTest extends BaseTest{
         Assert.assertTrue(Steps.isSampleUserRegistered());
     }
     @Test
-    @DisplayName("Registration failed: incorrect email")
+    @DisplayName("Registration failed: incorrect password - 5 symbols (6 min)")
     public void registrationFailedIncorrectPasswordLengthTest() {
         driver.get(URL.RegistrationPage);
         RegistrationPage objRegistrationPage = new RegistrationPage(driver);

@@ -36,6 +36,10 @@ public class HomePage {
     public void waitUrlUpdate() {
         new WebDriverWait(driver, 10).until(ExpectedConditions.not(ExpectedConditions.urlToBe(URL.HomePage)));
     }
+    @Step("Wait for URL provided")
+    public void waitUrlUpdate(String URL) {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.urlToBe(URL));
+    }
     @Step("Click constructor sauce tab")
     public void clickConstructorSauceTab() {
         driver.findElement(constructorSauceTab).click();

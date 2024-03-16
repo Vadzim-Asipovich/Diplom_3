@@ -25,13 +25,7 @@ public class EnterProfileTest extends BaseTest{
     @DisplayName("Enter profile")
     public void enterProfileTest() {
         objHomePage.clickProfileLink();
-        objHomePage.waitUrlUpdate();
-        //TODO: поменять проверку
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        objHomePage.waitUrlUpdate(URL.ProfilePage);
         Assert.assertEquals(URL.ProfilePage, driver.getCurrentUrl());
     }
 }
